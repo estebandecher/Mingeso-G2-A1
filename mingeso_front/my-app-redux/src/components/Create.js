@@ -39,9 +39,6 @@ class Create extends Component {
       <body class="custombody container-fluid">
         <div class="flex-center position-ref "> 
           <div class="container m-b-md" id="container2">
-            <div className="banner">
-              <span><img src={this.props.logo} className="App-logo" alt="logo" /><h1>Carrito</h1></span>
-            </div>
             {
               <Extra />
             }
