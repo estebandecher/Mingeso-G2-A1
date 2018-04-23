@@ -1,0 +1,13 @@
+config:
+  target: "http://localhost:9091"
+  phases:
+      - duration: 15
+        arrivalCount: 5
+scenarios:
+  - flow:
+    - get:
+        url: "/api/productos"
+    - get:
+        url: "/api/productos/15"
+    #- post:
+    #    url: "/api/productos/"
