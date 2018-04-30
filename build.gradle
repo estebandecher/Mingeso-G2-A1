@@ -15,8 +15,8 @@ apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 //Nuevos
-apply plugin: 'war'
-apply plugin: 'com.bmuschko.tomcat'
+//apply plugin: 'war'
+//apply plugin: 'com.bmuschko.tomcat'
 
 group = 'com.app'
 version = '0.0.1-SNAPSHOT'
