@@ -7,26 +7,36 @@ buildscript {
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-		classpath 'com.bmuschko:gradle-tomcat-plugin:2.2.2'
+ 		classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.6.2"
+		 classpath 'com.bmuschko:gradle-tomcat-plugin:2.2.2'
 	}
+	
 }
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
-//Nuevos
+apply plugin: 'org.sonarqube'
 apply plugin: 'war'
 apply plugin: 'com.bmuschko.tomcat'
 
-group = 'com.app'
-version = '0.0.1-SNAPSHOT'
+tomcatRun.httpPort = 8181
+
+war {
+   group = 'com.app'
+	version = '1.1.1-SNAPSHOT'
+}
+
 sourceCompatibility = 1.8
 
 repositories {
 	mavenCentral()
 }
 
+configurations {
+    providedRuntime
+}
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
@@ -35,13 +45,18 @@ dependencies {
 	runtime('org.springframework.boot:spring-boot-devtools')
 	runtime('mysql:mysql-connector-java')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
-  
+	providedRuntime('org.springframework.boot:spring-boot-starter-tomcat')
 }
 
 dependencies {
     def tomcatVersion = '8.0.32'
-    
+    //compile project(':embedded'), 
     tomcat "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}",
            "org.apache.tomcat.embed:tomcat-embed-logging-juli:${tomcatVersion}",
            "org.apache.tomcat.embed:tomcat-embed-jasper:${tomcatVersion}"
+}
+
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.7'
 }
