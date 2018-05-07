@@ -1,3 +1,5 @@
+id INT NOT NULL AUTO_INCREMENT,
+);
 create database mingesoFCYP;
 
 CREATE TABLE user ( 
