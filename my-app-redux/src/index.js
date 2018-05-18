@@ -9,7 +9,9 @@ import registerServiceWorker from './registerServiceWorker';
 
 import Edit from './components/Edit';
 import Create from './components/Create';
+import CreateS from './components/CreateSolution';
 import Show from './components/Show';
+//import Show from './components/ShowSolution';
 
 ReactDOM.render(
     <Router >
@@ -17,6 +19,7 @@ ReactDOM.render(
             <Route exact path='/' component={App} />
             <Route path='/edit/:id' component={Edit} />
             <Route path='/create' component={Create} />
+            <Route path='/createSolution' component={CreateS}/>
             <Route path='/show/:id' component={Show} />
         </div>
     </Router>,
