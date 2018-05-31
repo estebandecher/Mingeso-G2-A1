@@ -28,7 +28,9 @@ public class Problem implements Serializable {
     @Column(name="id_user")
 	public Integer id_user;
 	@Column(name="description")
-	public String description;
+    public String description;
+    @Column(name="title")
+	public String title;
     
 
     public Integer getId(){
@@ -51,6 +53,14 @@ public class Problem implements Serializable {
     }
     public void setDescription(String description){
         this.description=description;
+    }
+
+
+    public String getTitle(){
+        return title;
+    }
+    public void setTitle(String title){
+        this.title=title;
     }
 
 

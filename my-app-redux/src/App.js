@@ -33,8 +33,9 @@ class App extends Component {
               <span><img src={logo} className="App-logo" alt="logo" /><h1>Carrito</h1></span>
             </div>
             <ul class="breadcrumb">
-              <li>Productos /<Link to="/create"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Añadir Producto</Link></li>
+              <li>Productos /<Link to="/iProblema"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Añadir Producto</Link></li>
             </ul>
+
             <div className="container">
               <div class="panel panel-default">
                 <div class="panel-heading">
@@ -42,7 +43,9 @@ class App extends Component {
                     Lista de Productos
                   </h3>
                 </div>
+
                 <div class="panel-body">
+                
                   <table class="table table-stripe container-fluid">
                     <thead>
                       <tr>
@@ -65,6 +68,7 @@ class App extends Component {
                       )}
                     </tbody>
                   </table>
+                  
                 </div>
               </div>
             </div>

@@ -15,6 +15,8 @@ INSERT INTO solution (id,description, id_user,id_problem) VALUES (NULL,"Este es 
 testcases:
 INSERT INTO testCases (id,id_problem,input,output) VALUES (NULL,"1","input para problema1","output para problema1");
 INSERT INTO testCases (id,id_problem,input,output) VALUES (NULL,"1","input para problema1","output para problema1");
+INSERT INTO testCases (id,id_problem,input,output) VALUES (NULL,"1","entrada problema1","salida problema1");
+INSERT INTO testCases (id,id_problem,input,output) VALUES (NULL,"1","input p1","output p1");
 
 INSERT INTO test_cases (id,id_problem,input,output) VALUES (NULL,"1","input para problema1","output para problema1");
 INSERT INTO test_cases (id,id_problem,input,output) VALUES (NULL,"1","input para problema1","output para problema1");

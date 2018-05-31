@@ -8,7 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
+
+
 import java.util.List;
+import java.util.ArrayList;
 
 @RestController
 @RequestMapping("/problem")
@@ -34,6 +37,21 @@ public class ProblemController {
                 .orElseThrow(() -> new ResourceNotFoundException("Problem", "id", ProblemId));
     }
 
+    @GetMapping("/FromUser/{id}")
+    public List<Problem> getProblemByUserId(@PathVariable(value = "id") Integer userID) {
+        List<Problem>  lista=problemRepository.findAll();
+        List<Problem>  listaNueva = new ArrayList<Problem>();
+        //Filtrar
+        int i=0;
+        while (i<lista.size()) {
+            if (lista.get(i).getId_user()==userID){
+                listaNueva.add(lista.get(i));
+            }
+            i=i+1;
+        }
+        return listaNueva;
+    }
+
     @PutMapping("/{id}")
     public Problem updateProblem(@PathVariable(value = "id") Integer ProblemId,
                                             @Valid @RequestBody Problem ProblemDetails) {
@@ -44,6 +62,7 @@ public class ProblemController {
         Problem.setId(ProblemDetails.getId());
         Problem.setId_user(ProblemDetails.getId_user());
         Problem.setDescription(ProblemDetails.getDescription());
+        Problem.setTitle(ProblemDetails.getTitle());
 
         Problem updatedProblem = problemRepository.save(Problem);
         return updatedProblem;
@@ -58,5 +77,14 @@ public class ProblemController {
 
         return ResponseEntity.ok().build();
     }
+
+
+
+
+
+
+
+
+    
 
 }

@@ -9,7 +9,9 @@ class Extra extends Component {
   render() {
     return (
         <div className="banner">
-            <span><img src={logo} className="App-logo" alt="logo" /><h1>Carrito</h1></span>
+            <span>
+             
+            </span>
         </div>
     )
   }
