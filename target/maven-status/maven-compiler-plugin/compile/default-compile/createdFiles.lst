@@ -1,0 +1,17 @@
+com/app/mingeso/controller/SolutionController.class
+com/app/mingeso/controller/TestCasesController.class
+com/app/mingeso/controller/ProblemController.class
+com/app/mingeso/exception/ResourceNotFoundException.class
+com/app/mingeso/controller/ProductoController.class
+com/app/mingeso/MingesoApplication.class
+com/app/mingeso/model/Producto.class
+com/app/mingeso/repository/UserRepository.class
+com/app/mingeso/repository/TestCasesRepository.class
+com/app/mingeso/repository/ProblemRepository.class
+com/app/mingeso/repository/SolutionRepository.class
+com/app/mingeso/model/TestCases.class
+com/app/mingeso/model/User.class
+com/app/mingeso/controller/UserController.class
+com/app/mingeso/repository/ProductoRepository.class
+com/app/mingeso/model/Solution.class
+com/app/mingeso/model/Problem.class
