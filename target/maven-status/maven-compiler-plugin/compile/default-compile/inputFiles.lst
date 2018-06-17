@@ -3,8 +3,8 @@
 /home/esteban/Documentos/Mingeso-G2-A1/src/main/java/com/app/mingeso/repository/ProblemRepository.java
 /home/esteban/Documentos/Mingeso-G2-A1/src/main/java/com/app/mingeso/repository/TestCasesRepository.java
 /home/esteban/Documentos/Mingeso-G2-A1/src/main/java/com/app/mingeso/controller/UserController.java
-/home/esteban/Documentos/Mingeso-G2-A1/src/main/java/com/app/mingeso/controller/ProblemController.java
 /home/esteban/Documentos/Mingeso-G2-A1/src/main/java/com/app/mingeso/controller/SolutionController.java
+/home/esteban/Documentos/Mingeso-G2-A1/src/main/java/com/app/mingeso/controller/ProblemController.java
 /home/esteban/Documentos/Mingeso-G2-A1/src/main/java/com/app/mingeso/repository/ProductoRepository.java
 /home/esteban/Documentos/Mingeso-G2-A1/src/main/java/com/app/mingeso/model/TestCases.java
 /home/esteban/Documentos/Mingeso-G2-A1/src/main/java/com/app/mingeso/MingesoApplication.java
@@ -12,7 +12,7 @@
 /home/esteban/Documentos/Mingeso-G2-A1/src/main/java/com/app/mingeso/controller/ProductoController.java
 /home/esteban/Documentos/Mingeso-G2-A1/src/main/java/com/app/mingeso/model/Problem.java
 /home/esteban/Documentos/Mingeso-G2-A1/src/main/java/com/app/mingeso/model/Solution.java
-/home/esteban/Documentos/Mingeso-G2-A1/src/main/java/com/app/mingeso/controller/TestCasesController.java
 /home/esteban/Documentos/Mingeso-G2-A1/src/main/java/com/app/mingeso/repository/UserRepository.java
+/home/esteban/Documentos/Mingeso-G2-A1/src/main/java/com/app/mingeso/controller/TestCasesController.java
 /home/esteban/Documentos/Mingeso-G2-A1/src/main/java/com/app/mingeso/model/Producto.java
 /home/esteban/Documentos/Mingeso-G2-A1/src/main/java/com/app/mingeso/model/User.java

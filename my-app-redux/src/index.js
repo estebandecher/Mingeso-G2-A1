@@ -38,6 +38,5 @@ ReactDOM.render(
             
             <Route path='/Problemas' component={Problemas} />
         </div>
-    </Router>,
-     document.getElementById('root'));
+    </Router>     document.getElementById('root'));
 registerServiceWorker();
