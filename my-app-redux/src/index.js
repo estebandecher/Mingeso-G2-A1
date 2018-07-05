@@ -1,3 +1,4 @@
+/* eslint no-restricted-globals: 0*/
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
@@ -6,6 +7,9 @@ import './index.css';
 import App from './App';
 import './App.css';
 import registerServiceWorker from './registerServiceWorker';
+import Auth from './Auth';
+
+
 
 import Edit from './components/Edit';
 import Create from './components/Create';
@@ -18,25 +22,22 @@ import VProblema from './components/VProblema';
 import ICasoDePrueba from './components/ICasoDePrueba';
 import Problemas from './components/Problemas';
 
+import Main from './components/Main';
+
+
+
+import { makeMainRoutes } from './routes';
+
+const routes = makeMainRoutes();
 
 ReactDOM.render(
-    <Router >
-        <div>
-            <Route exact path='/' component={App} />
-            <Route path='/edit/:id' component={Edit} />
-            <Route path='/login' component={Login} />
-            <Route path='/show/:id' component={Show} />
+  routes,
+  document.getElementById('root')
+);
 
-            <Route path='/casoDePrueba' component={CasoDePrueba} />
-            <Route path='/CasosDePruebaL/:id' component={CasoDePruebaL} />
 
-            <Route path='/iProblema' component={IProblema} />
 
-            <Route path='/ICasoDePrueba/:id' component={ICasoDePrueba} />
 
-            <Route path='/VProblema/:id' component={VProblema} />
-            
-            <Route path='/Problemas' component={Problemas} />
-        </div>
-    </Router>     document.getElementById('root'));
+
 registerServiceWorker();
+

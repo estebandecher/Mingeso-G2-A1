@@ -50,12 +50,40 @@ public class UserController {
     }
     */
 
-    /*
-    @GetMapping("/")
-    public User getUserByEmail(@PathVariable(value = "email") String userEmail) {
-        return UserRepository.findByEmail(userEmail)
-                .orElseThrow(() -> new ResourceNotFoundException("User", "email", userEmail));
-    }*/
+    
+    @GetMapping("all/{email}")
+    public User getUserByEmail(@PathVariable(value = "email") String emailUser) {
+
+        List<User>  listaOriginal=UserRepository.findAll();
+        //User user=new  User();
+        //Filtrar
+        int i=0;
+        while (i<listaOriginal.size()) {
+            if (listaOriginal.get(i).getEmail().equals(emailUser) ){
+                return listaOriginal.get(i); 
+            }
+            i=i+1;
+        }
+        return null;
+
+        //return UserRepository.findByEmail(emailUser).orElseThrow(() -> new ResourceNotFoundException("User", "email", emailUser));
+    }
+    @GetMapping("all/role/{email}")
+    public Integer getRolerByEmail(@PathVariable(value = "email") String emailUser) {
+
+        List<User>  listaOriginal=UserRepository.findAll();
+        //User user=new  User();
+        //Filtrar
+        int i=0;
+        while (i<listaOriginal.size()) {
+            if (listaOriginal.get(i).getEmail().equals(emailUser) ){
+                return listaOriginal.get(i).getRole(); 
+            }
+            i=i+1;
+        }
+        return -1;
+
+    }
 
     
     @PutMapping("/login")

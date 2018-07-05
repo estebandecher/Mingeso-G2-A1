@@ -1,28 +1,45 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import Extra from './Extra'
+import Extra from './Extra';
+import Cargando from "./Cargando";
+
 
 class Problemas extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      problem: []
+      problem: [],
+      nickname: "",
+      rol: "",
+      check: false,
+      check2: false,
+
     };
   }
 
-  componentDidMount() {
+  componentWillMount() {
+
+    
     axios.get('/problem/all')
       .then(res => {
-        this.setState({ problem: res.data });
+        this.setState({ problem: res.data,check2: true});
         console.log(this.state.problem);
+      });
+      axios.get('/User/all/role/'+this.props.cosas.email)
+      .then(res => {
+        this.setState({ rol: res.data, check: true});
+        console.log(this.props.cosas.rol);
       });
   }
 
 
   render() {
+   
     return (
+
+      (this.state.check && this.state.check2) ?
       <body class="custombody container-fluid">
         <div class="flex-center position-ref "> 
           <div class="container m-b-md" id="container2">
@@ -52,12 +69,26 @@ class Problemas extends Component {
                       )}
                     </tbody>
                   </table>
+                      
+             
+
               </div>
             </div>
           </div>
         </div>
       </body>
+
+    : 
+
+    <Cargando />
+
     );
+
+
+  
+
+  
+
   }
 }
 
