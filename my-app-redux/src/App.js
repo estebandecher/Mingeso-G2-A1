@@ -10,16 +10,16 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: "Carrito",
-      productos: []
+      title: "Soluciones",
+      solutions: []
     };
   }
 
   componentDidMount(){
-    Axios.get('/api/productos')
+    Axios.get('/api/Solution')
       .then(res => {
-        this.setState({ productos: res.data });
-        console.log(this.state.productos);
+        this.setState({ solutions: res.data });
+        console.log(this.state.solutions);
       });
   }
 
@@ -39,7 +39,7 @@ class App extends Component {
               <div class="panel panel-default">
                 <div class="panel-heading">
                   <h3 class="panel-title">
-                    Lista de Productos
+
                   </h3>
                 </div>
                 <div class="panel-body">
