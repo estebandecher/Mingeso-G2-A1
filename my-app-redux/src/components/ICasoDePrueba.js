@@ -4,6 +4,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import Extra from './Extra'
 import CasoDePrueba from './CasoDePrueba';
+import Cargando from "./Cargando";
 
 class ICasosDePrueba extends Component {
 
@@ -14,20 +15,22 @@ class ICasosDePrueba extends Component {
       problem: {},
       input:'',
       output:'',
-      testCase: []
+      testCase: [],
+      check1: false, 
+      check2: false
     };
   }
 
   componentDidMount() {
     axios.get('/problem/'+this.props.match.params.id)
       .then(res => {
-        this.setState({ problem: res.data });
+        this.setState({ problem: res.data ,check1: true});
         console.log(this.state.problem);
       });
 
       axios.get('/TestCases/FromProblem/'+this.props.match.params.id)
       .then(res => {
-        this.setState({ testCase: res.data });
+        this.setState({ testCase: res.data , check2: true});
         console.log(this.state.testCase);
       });
 
@@ -55,8 +58,11 @@ class ICasosDePrueba extends Component {
 
 
   render() {
-    //const { title,description,id_user} = this.state.problem;
+   
     return (
+
+      this.state.check1 && this.state.check2 ?
+
       <body class="custombody container-fluid">
         <div class="flex-center position-ref "> 
           <div class="container m-b-md" id="container2">
@@ -65,10 +71,7 @@ class ICasosDePrueba extends Component {
             }
             
             <div class="panel-body">
-           
-              
-
-              
+                      
                 <div class="form-group">
                   <label for="title">Titulo:</label>
                   <input type="text" class="form-control" name="title" value={this.state.problem.title} placeholder="Titulo Ejemplo" />
@@ -141,24 +144,21 @@ class ICasosDePrueba extends Component {
             </form>
  
 
-
-
-
-              
-
-         
-
-
-
-            </div>
-
-            
+            </div>         
  
 
           </div>
         </div>
       </body>
-    );
+
+      : 
+
+      <Cargando />
+
+      );
+
+
+
   }
 }
 

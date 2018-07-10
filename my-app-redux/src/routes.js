@@ -21,6 +21,7 @@ import IProblema from './components/IProblema';
 import VProblema from './components/VProblema';
 import ICasoDePrueba from './components/ICasoDePrueba';
 import Problemas from './components/Problemas';
+import ProblemasProfesor from './components/ProblemasProfesor';
 
 import Callback from './components/Callback';
 import NotFound from './components/NotFound';
@@ -80,11 +81,14 @@ export const makeMainRoutes = () => {
 
             <Route path="/IProblema" render={(props) => <IProblema auth={auth} cosas={cosas} {...props} />} />
 
+             <Route path="/ProblemasProfesor/:id" render={(props) => <ProblemasProfesor auth={auth} cosas={cosas} {...props} />} />
+
+           
+
 
             <Route path="/Home" render={(props) => <Home auth={auth} cosas={cosas} {...props} />} />
              <Route path="/Profesor" render={(props) => <Profesor auth={auth} cosas={cosas} {...props} />} />
              <Route path="/Alumno" render={(props) => <Alumno auth={auth} cosas={cosas} {...props} />} />
-
             <Route path="/UNoRegistrado" render={(props) => <UNoRegistrado auth={auth} cosas={cosas} {...props} />} />
 
 

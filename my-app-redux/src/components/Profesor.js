@@ -72,7 +72,7 @@ export default class Profesor extends Component{
 
 
                 <div class="form-group">
-                <Link to="/Problemas" ><button type="button" class="btn btn-default">Problemas creados</button> </Link >
+                <Link to={`/ProblemasProfesor/${this.state.user.id}`} ><button type="button" class="btn btn-default">Problemas creados</button> </Link >
                 </div>
 
              

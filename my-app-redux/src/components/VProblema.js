@@ -7,6 +7,7 @@ import Extra from './Extra'
 import CasoDePrueba from './CasoDePrueba';
 import NotFound from './NotFound';
 import UNoRegistrado from './UNoRegistrado';
+import Cargando from "./Cargando";
 
 class VProblema extends Component {
 
@@ -16,28 +17,31 @@ class VProblema extends Component {
     this.state = {
       problem: {},
       testCase: [],
-      rol: ''
+      rol: '',
+      check1: false,
+      check2: false,
+      check3: false
     };
   }
 
   componentDidMount() {
     axios.get('/problem/'+this.props.match.params.id)
       .then(res => {
-        this.setState({ problem: res.data });
+        this.setState({ problem: res.data, check1: true });
         console.log(this.state.problem);
       });
 
       
       axios.get('/TestCases/FromProblem/'+this.props.match.params.id)
       .then(res => {
-        this.setState({ testCase: res.data });
+        this.setState({ testCase: res.data, check2: true });
         console.log(this.state.testCase);
       }); 
       
 
       axios.get('/User/all/role/'+this.props.cosas.email)
       .then(res => {
-        this.setState({ rol: res.data });
+        this.setState({ rol: res.data, check3: true });
         console.log(this.state.rol);
       });
   }
@@ -68,6 +72,8 @@ class VProblema extends Component {
   render() {
    
       return (
+
+        (this.state.check && this.state.check2 && this.state.check3) ?
       
         <body class="custombody container-fluid">
           <div class="flex-center position-ref "> 
@@ -143,9 +149,13 @@ class VProblema extends Component {
             </div>
           </div>
         </body>
-      );
 
+
+        : 
+
+        <Cargando />
     
+    );
   
     
   }
