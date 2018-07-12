@@ -3,7 +3,7 @@ package com.app.mingeso.model;
 import javax.persistence.Entity;
 
 @Entity
-public class Codigo {
+public class Code {
 
     private String code;
     private String language;
@@ -26,5 +26,5 @@ public class Codigo {
 
 
 
-    
+
 }
