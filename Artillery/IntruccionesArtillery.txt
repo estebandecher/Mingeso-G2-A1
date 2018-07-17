@@ -1,0 +1,4 @@
+Tener instalado Artillery
+Abrir una terminar en la ubicacion del archivo de artillery (stress.yml)
+Ejecutar el comando: artillery run stress.yml
+

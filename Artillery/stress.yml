@@ -1,0 +1,13 @@
+config:
+  target: "http://http://159.65.69.74::9091"
+  phases:
+      - duration: 15
+        arrivalCount: 5
+scenarios:
+  - flow:
+    - get:
+        url: "/User/all"
+    - get:
+        url: "/problem/all"
+    #- post:
+    #    url: "/api/productos/"
