@@ -13,13 +13,28 @@ class IProblema extends Component {
       title: '',
       description: '',
       id_user:'1',
+      user: {},
+      check: false
     };
   }
+
+
+  componentWillMount() {
+    axios.get('/User/all/'+this.props.cosas.email)
+      .then(res => {
+        this.setState({ user: res.data, check: true });
+        console.log(this.state.user);
+      });
+  }
+
+
   onChange = (evento) => {
     const state = this.state
     state[evento.target.name] = evento.target.value;
     this.setState(state);
   }
+
+
 
   onSubmit = (evento) => {
     evento.preventDefault();
@@ -33,7 +48,8 @@ class IProblema extends Component {
   }
 
   render() {
-    const { title,description,id_user} = this.state;
+    const { title,description} = this.state;
+    this.state.id_user=this.state.user.id;
     return (
       <body class="custombody container-fluid">
         <div class="flex-center position-ref "> 

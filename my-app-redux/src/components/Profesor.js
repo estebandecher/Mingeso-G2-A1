@@ -8,9 +8,9 @@ import Extra from './Extra';
 export default class Profesor extends Component{
 
     constructor() {
-        super();
+        super(); 
         this.state = {
-          user: {},
+          user: {id: '', email: '', role: '', name: ''},
           userUsach: "",
           check: false
 
@@ -19,7 +19,7 @@ export default class Profesor extends Component{
 
 
     componentWillMount() {
-        axios.get('/User/all/'+this.props.email)
+        axios.get('/User/all/'+this.props.cosas.email)
           .then(res => {
             this.setState({ user: res.data, check: true });
             console.log(this.state.user);
@@ -35,6 +35,8 @@ export default class Profesor extends Component{
         
         
         return ( 
+
+
          this.state.check ?
 
          <body class="custombody container-fluid">
@@ -74,6 +76,27 @@ export default class Profesor extends Component{
                 <div class="form-group">
                 <Link to={`/ProblemasProfesor/${this.state.user.id}`} ><button type="button" class="btn btn-default">Problemas creados</button> </Link >
                 </div>
+
+
+                   <div class="form-group">
+                  <button> {this.state.user.id}</button>
+                   </div>
+   
+                    <div class="form-group">
+                  <button> {this.state.user.email}</button>
+                   </div>
+   
+                    <div class="form-group">
+                  <button> {this.state.user.nickname}</button>
+                   </div>
+
+                    <div class="form-group">
+                  <button> {this.state.user.role}</button>
+                   </div>
+
+                    <div class="form-group">
+                  <button> {this.state.user.name}</button>
+                   </div>
 
              
    

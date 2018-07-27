@@ -73,7 +73,7 @@ class VProblema extends Component {
    
       return (
 
-        (this.state.check && this.state.check2 && this.state.check3) ?
+        (this.state.check1 && this.state.check2) ?
       
         <body class="custombody container-fluid">
           <div class="flex-center position-ref "> 
